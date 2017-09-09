@@ -21,23 +21,27 @@ class AllUser(Resource):
         return jsonify({'users': ViewUser.getList()})
 
     def post(self):
-        parser_args = parser.parse_args()
+        # parser_args = parser.parse_args()
         # save record
-        return jsonify({'users': ViewUser.save(parser_args)})
+        # return jsonify({'users': ViewUser.save(parser_args)})
+        return jsonify({'ok'})
 
 
 class UserOne(Resource):
 
     def get(self, pk):
-        return jsonify({'user': ViewUser.getByID(pk)})
+        # return jsonify({'user': ViewUser.getByID(pk)})
+        return jsonify({'ok'})
 
     def put(self, pk):
         parser_args = parser.parse_args()
         parser_args['id'] = pk
-        return jsonify({'result': ViewUser.update(parser_args)})
+        # return jsonify({'result': ViewUser.update(parser_args)})
+        return jsonify({'ok'})
 
     def delete(self, pk):
-        return jsonify({'result': ViewUser.deleteByID(pk)})
+        # return jsonify({'result': ViewUser.deleteByID(pk)})
+        return jsonify({'ok'})
 
 
 api.add_resource(AllUser, '/users')
