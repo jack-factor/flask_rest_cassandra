@@ -1,4 +1,4 @@
-FROM python_cassandra_drive:1
+FROM jackmoreno/python3_cassandra_driver
 
 MAINTAINER Jack Moreno Barrera "jack12972@gmail.com"
 
