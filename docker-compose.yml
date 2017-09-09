@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build: ./
+    container_name: api-rest
+    depends_on:
+      - dbnosql
+    ports:
+      - "8080:8080"
+  dbnosql:
+    image: cassandra
+    container_name: cassandra-db
+    volumes:
+      - ./data:/var/lib/cassandra/data
+    ports:
+      - "9042:9042"
+      - "7000:7000"
+      - "9160:9160"
